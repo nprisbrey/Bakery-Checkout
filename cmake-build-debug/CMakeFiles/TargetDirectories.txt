@@ -1,0 +1,3 @@
+C:/Users/NandM2/CLionProjects/Bakery-Checkout/cmake-build-debug/CMakeFiles/Bakery_Checkout.dir
+C:/Users/NandM2/CLionProjects/Bakery-Checkout/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/NandM2/CLionProjects/Bakery-Checkout/cmake-build-debug/CMakeFiles/rebuild_cache.dir

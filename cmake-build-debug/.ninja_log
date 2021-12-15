@@ -1,0 +1,8 @@
+# ninja log v5
+0	554	6612320658140176	CMakeFiles/Bakery_Checkout.dir/main.cpp.obj	da2dbe87f2b04aa
+20	380	6612321262331637	CMakeFiles/Bakery_Checkout.dir/Cake.cpp.obj	644f6fdb096106f9
+2	383	6612321262341591	CMakeFiles/Bakery_Checkout.dir/Bread.cpp.obj	7277862d9c47b539
+15	384	6612321262371516	CMakeFiles/Bakery_Checkout.dir/BakedGood.cpp.obj	d8e14690d90a1880
+17	385	6612321262391477	CMakeFiles/Bakery_Checkout.dir/CupCake.cpp.obj	6176b90c5bba30f6
+24	391	6612321262451297	CMakeFiles/Bakery_Checkout.dir/LayerCake.cpp.obj	a425844b082ab8fd
+391	542	6612321263938495	Bakery_Checkout.exe	d03f0450f34dc75d
