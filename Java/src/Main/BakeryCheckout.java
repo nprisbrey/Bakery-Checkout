@@ -68,21 +68,19 @@ public class BakeryCheckout {
             }
         }
 
-        System.out.println("""
-                
-                Invoice:
-                Baked Good Quantity Total($)""");
+        System.out.println("\nInvoice:");
+        System.out.printf("%-75s%-9s%-9s\n","Baked Good", "Quantity", "Total($)");
         for(BakedGood Good : allGoods) {
             String key = Good.ToString();
             if(uniqueGoods.get(key) != 0) {
-                System.out.println(key + " " + uniqueGoods.get(key) + " " + String.format("%.2f",Good.DiscountedPrice(uniqueGoods.get(key))));
+                System.out.printf("%-75s%9s%9.2f\n", key, uniqueGoods.get(key), Good.DiscountedPrice(uniqueGoods.get(key)));
                 cartQuantity += uniqueGoods.get(key);
                 cartPrice += Good.DiscountedPrice(uniqueGoods.get(key));
                 uniqueGoods.put(key, 0);
             }
         }
 
-        System.out.println("Totals: " + cartQuantity + " " + cartPrice);
+        System.out.printf("%-75s%9d%9.2f\n", "Totals:", cartQuantity, cartPrice);
 
         System.out.println("\nThank you for your order! Good Bye!");
 
