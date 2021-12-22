@@ -1,4 +1,4 @@
-import BakedGood
+from BakedGood import BakedGood
 
 class Cake(BakedGood):
     def __init__(self, basePrice, flavor, frosting):

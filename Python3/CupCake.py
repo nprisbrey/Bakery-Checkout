@@ -1,4 +1,4 @@
-import Cake
+from Cake import Cake
 
 class CupCake(Cake):
     def __init__(self, flavor, frosting, sprinkleColor):
@@ -6,7 +6,7 @@ class CupCake(Cake):
         self._sprinkleColor = sprinkleColor
 
     def __str__(self):
-        return super().getFlavor() + " cupcake with " + super().getFrosting() + " frosting and " + self.sprinkleColor + " sprinkles " + super()
+        return super().getFlavor() + " cupcake with " + super().getFrosting() + " frosting and " + self._sprinkleColor + " sprinkles " + super().__str__()
 
     #Overriding abstract DiscountedPrice(quantity) from BakedGood
     def DiscountedPrice(self, quantity):
