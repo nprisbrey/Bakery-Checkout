@@ -29,37 +29,40 @@ void main(List<String> arguments) {
   printMenu();
 
   print("Enter sub-order (enter \"done\" to finish)");
-  while(!(makeLowercase(suborder) == "done")) {
+  while (!(makeLowercase(suborder) == "done")) {
     print("Sub-order:");
     suborder = stdin.readLineSync().toString();
 
     var suborderWords = suborder.split(" ");
     suborderWords.removeWhere((word) => word == "");
-    if(suborderWords[0].toLowerCase() == "bread") {
-      for(int i = 0; i < int.parse(suborderWords[2]); i++) {
+    if (suborderWords[0].toLowerCase() == "bread") {
+      for (int i = 0; i < int.parse(suborderWords[2]); i++) {
         allGoods.add(Bread(suborderWords[1]));
       }
-    } else if(suborderWords[0].toLowerCase() == "cupcake") {
-      for(int i = 0; i < int.parse(suborderWords[4]); i++) {
-        allGoods.add(CupCake(suborderWords[1], suborderWords[2], suborderWords[3]));
+    } else if (suborderWords[0].toLowerCase() == "cupcake") {
+      for (int i = 0; i < int.parse(suborderWords[4]); i++) {
+        allGoods
+            .add(CupCake(suborderWords[1], suborderWords[2], suborderWords[3]));
       }
-    } else if(suborderWords[0].toLowerCase() == "layer-cake") {
-      for(int i = 0; i < int.parse(suborderWords[4]); i++) {
-        allGoods.add(LayerCake(suborderWords[1], suborderWords[2], int.parse(suborderWords[3])));
+    } else if (suborderWords[0].toLowerCase() == "layer-cake") {
+      for (int i = 0; i < int.parse(suborderWords[4]); i++) {
+        allGoods.add(LayerCake(
+            suborderWords[1], suborderWords[2], int.parse(suborderWords[3])));
       }
-    } else if(suborderWords[0].toLowerCase() != "done") {
-      print("\nThe product \"${suborderWords[0]}\" is not recognized. Please enter a suborder according to the menu. See below:");
+    } else if (suborderWords[0].toLowerCase() != "done") {
+      print(
+          "\nThe product \"${suborderWords[0]}\" is not recognized. Please enter a suborder according to the menu. See below:");
       printMenu();
     }
   }
 
   print("\nOrder Confirmations:");
-  for(final allGood in allGoods) {
+  for (final allGood in allGoods) {
     print(allGood.toString());
   }
 
   //Populate uniqueGoods
-  for(final allGood in allGoods) {
+  for (final allGood in allGoods) {
     final String key = allGood.toString();
     uniqueGoods.update(
       key,
@@ -69,18 +72,27 @@ void main(List<String> arguments) {
   }
 
   print("\nInvoice:");
-  print("Baked Good".padRight(75) + "Quantity".padLeft(9) + "Total(\$)".padLeft(9));
-  for(final good in allGoods) {
+  print("Baked Good".padRight(75) +
+      "Quantity".padLeft(9) +
+      "Total(\$)".padLeft(9));
+  for (final good in allGoods) {
     final String key = good.toString();
-    if(uniqueGoods[key] != 0) {
-      print(key.padRight(75) + uniqueGoods[key]!.toString().padLeft(9) + good.discountedPrice(uniqueGoods[key]!).toStringAsFixed(2).padLeft(9));
+    if (uniqueGoods[key] != 0) {
+      print(key.padRight(75) +
+          uniqueGoods[key]!.toString().padLeft(9) +
+          good
+              .discountedPrice(uniqueGoods[key]!)
+              .toStringAsFixed(2)
+              .padLeft(9));
       cartQuantity += uniqueGoods[key]!;
       cartPrice += good.discountedPrice(uniqueGoods[key]!);
       uniqueGoods[key] = 0;
     }
   }
 
-  print("Totals:".padRight(75) + cartQuantity.toString().padLeft(9) + cartPrice.toStringAsFixed(2).padLeft(9));
+  print("Totals:".padRight(75) +
+      cartQuantity.toString().padLeft(9) +
+      cartPrice.toStringAsFixed(2).padLeft(9));
 
   print("\nThank you for your order! Good Bye!");
 }

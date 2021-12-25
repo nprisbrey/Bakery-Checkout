@@ -1,4 +1,3 @@
-
 abstract class BakedGood {
   final double _basePrice;
 
