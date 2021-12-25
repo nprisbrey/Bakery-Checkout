@@ -6,7 +6,7 @@ abstract class BakedGood {
 
   @override
   String toString() {
-    return "(\$" + _basePrice.toStringAsPrecision(2) + ")";
+    return "(\$" + _basePrice.toStringAsFixed(2) + ")";
   }
 
   double get basePrice => _basePrice;
