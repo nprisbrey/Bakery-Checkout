@@ -1,6 +1,8 @@
 # Bakery-Checkout
 
-A C++ program that simulates the electronic payment system of a bakery. Prices and discounts are automatically applied.
+A program that simulates the electronic payment system of a bakery. Prices and discounts are automatically applied.
+
+The program was originally written in C++ and then later translated to Java, Python3, and Dart. Most of the translated code was written as the most direct translation of the original C++ code, even if such translated code wasn't the most efficient in the translated language. Some minor exceptions were made, one of which can be seen by Java, Python3, and Dart retaining the capitalization of the user's input while C++ makes all strings lowercase. The code for all four versions can be found in the corresponding directory and be compared.
 
 An example of the system is shown below. User input is bolded.
 
